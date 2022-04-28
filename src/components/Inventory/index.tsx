@@ -57,7 +57,7 @@ console.log(dataForSearch)
     setSearchValue(valueToSearch);
     setIsSearch(true);
     const filterData = allData?.find((nft) => {
-      if(nft.name.substring(0,valueToSearch.length)== valueToSearch.toUpperCase() || nft.contractAddress.substring(0,valueToSearch.length) == valueToSearch ||
+      if(nft.name.substring(0,valueToSearch.length).toUpperCase()== valueToSearch.toUpperCase() || nft.contractAddress.substring(0,valueToSearch.length) == valueToSearch ||
       nft.tokenId.substring(0,valueToSearch.length)== valueToSearch) return nft
     });
     const getDat = { ...filterData };

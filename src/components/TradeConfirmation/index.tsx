@@ -60,12 +60,12 @@ const TradeConfirmation: React.FC<TradeConfirmationProps> = (props) => {
     >
       <DialogTitle>
         <Box display="flex" justifyContent="space-between">
-        <HandshakeIcon sx={{color:"#575757", fontSize:"45px"}}  />
-        <Typography variant="h2" component="p" align="center" fontWeight="bold" sx={{color:"#575757", fontSize:"45px"}}>
+        <Icon icon="emojione-monotone:handshake" color="#575757" width="80" height="80"  />
+        <Typography variant="h2" component="p" align="center" fontWeight="bold" sx={{color:"#575757", fontSize:"50px",fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
           Trade confirmed
         </Typography>
         
-        <HandshakeIcon sx={{color:"#575757", fontSize:"45px"}}  />
+        <Icon icon="emojione-monotone:handshake" color="#575757" width="80" height="80"  />
         </Box>
       </DialogTitle>
       <DialogContent sx={{borderRadius:"20px!important",backgroundColor:"transparent!important"}}>
@@ -85,10 +85,10 @@ const TradeConfirmation: React.FC<TradeConfirmationProps> = (props) => {
           <Grid item xs={12}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography variant="h6"  fontWeight="bold" component="p" sx={{color:"#575757"}}>
+                <Typography variant="h6"  fontWeight="bold" component="p" sx={{color:"#575757",fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                   Status:
                   </Typography>
-                  <Typography variant="h6" fontSize="15px" fontWeight="bold" sx={{color:"#575757"}}> {isDone ? <span>&nbsp;&nbsp;Sending Tokens to Desitination</span> : <span>&nbsp;&nbsp;Waiting for both Traders to Send-In</span>}
+                  <Typography variant="h6" fontSize="15px" fontWeight="bold" sx={{color:"#575757",fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}> {isDone ? <span>&nbsp;&nbsp;Sending Tokens to Desitination</span> : <span>&nbsp;&nbsp;Waiting for both Traders to Send-In</span>}
                   </Typography>
               </Grid>
               
@@ -114,22 +114,22 @@ const TradeConfirmation: React.FC<TradeConfirmationProps> = (props) => {
                   <Icon icon="mdi:ethereum" color="green"  style={{width:100, height:100}}/>
                 </Grid>
            : <Grid xs={12} >
-           <NFTlogo  style={{width:100, height:100,fill:"#A0964A"}} color="yellow"/>
+           <Icon icon="mdi:content-save-cog-outline" width={100} height={100} color={index===1 && label=="Send NFTs to"? "#575757":"#A0964A"} />
          </Grid>}
                       {productsCount === 0 && key === "sendingItemsStatus" ? (
-                        <Typography color="error" >
+                        <Typography color="error" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                           Not initiated
                         </Typography>
                       ) : status === SendingStatus.SENDING ? (
-                        <Typography color="orange" >
+                        <Typography color="orange" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                           Sending...
                         </Typography>
                       ) : status === SendingStatus.SENT ? (
-                        <Typography color="yellowGreen" >
+                        <Typography color="yellowGreen" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                           Sent
                         </Typography>
                       ) : status === SendingStatus.FAILED ? (
-                        <Typography color="error" >
+                        <Typography color="error" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                           Failed to send
                         </Typography>
                       ) : status === SendingStatus.NONE ? (

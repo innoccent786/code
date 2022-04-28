@@ -22,10 +22,11 @@ const UserConfirmation: React.FC<UserConfirmationProps> = (props) => {
             
             component="span"
             variant="h6"
+            sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}
           >
             <b>{props.isCurrentuser? "You" : "Your Buddy"}</b>
 <br/>
-            <span style={{fontSize:'16px'}}>{props.isCurrentuser?<span>&nbsp;</span>:trader.name}</span>
+            <span style={{fontSize:'16px',fontFamily:"Verdana,sans-serif!important"}}>{props.isCurrentuser?<span>&nbsp;</span>:trader.name}</span>
           </Typography>
       </Grid>
 
@@ -33,25 +34,25 @@ const UserConfirmation: React.FC<UserConfirmationProps> = (props) => {
       <Grid item xs={12}>
           <Box display="flex" justifyContent="space-between">
           <Box>
-          <Typography variant="h6"  fontWeight={900} component="p" sx={{fontFamily:"Verdana",color:"#575757"}}>
-            ETHERUM Sended:
+          <Typography variant="h6"  fontWeight={900} component="p" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal",color:"#575757"}}>
+            Etherum sended:
           </Typography> 
           {sendingMoneyStatus === SendingStatus.SENT ?  <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
           &nbsp;&nbsp;&nbsp;  <CheckIcon  fontSize="medium"  style={{ color:"green",fontWeight:"bold" }} />
-            <Typography variant="h6" alignSelf="center" fontSize="16px" fontWeight="bold" color="green" component="p">
+            <Typography variant="h6" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}} alignSelf="center" fontSize="16px" fontWeight="bold" color="green" component="p">
            Accepted
           </Typography> 
                             </Box>
  : sendingMoneyStatus === SendingStatus.SENDING?
  <Box sx={{ display: 'flex' }}>
  &nbsp;&nbsp;&nbsp;<HourglassTopIcon  fontSize="medium"  style={{ color:"yellow",fontWeight:"bold" }}/>
- <Typography variant="h6" alignSelf="center" fontSize="16px" fontWeight="bold" color="yellow" component="p">
- On The Way
+ <Typography variant="h6" alignSelf="center" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}} fontSize="16px" fontWeight="bold" color="yellow" component="p">
+ On the way
 </Typography> 
                  </Box> :
  <Box sx={{ display: 'flex' }}>
             &nbsp;&nbsp;&nbsp;   <ClearIcon  fontSize="medium"  style={{ color:"red",fontWeight:"bold" }}/>
-            <Typography variant="h6" alignSelf="center" fontSize="16px" fontWeight="bold" color="red" component="p">
+            <Typography variant="h6" alignSelf="center" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}} fontSize="16px" fontWeight="bold" color="red" component="p">
             Not started #6077
           </Typography> 
                             </Box>
@@ -66,7 +67,7 @@ const UserConfirmation: React.FC<UserConfirmationProps> = (props) => {
             onClick={onSendMoney(trader.id)}
             variant="outlined"
             size="small"
-          sx={{borderRadius:"16px",padding:"0px 20px",backgroundColor:"#7590d3",color:"white"}}
+          sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"captalize",borderRadius:"16px",padding:"0px 30px",backgroundColor:"#7590d3",color:"white"}}
           >
             
             Send
@@ -81,27 +82,27 @@ const UserConfirmation: React.FC<UserConfirmationProps> = (props) => {
       <Grid item xs={12}>
         <Box display="flex" justifyContent="space-between">
         <Box>
-          <Typography variant="h6" fontWeight="bold" component="p" sx={{color:"#575757"}}>
-            NFTs Sended:
+          <Typography variant="h6" fontWeight="bold" component="p" sx={{color:"#575757",fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
+            Nfts sended:
           </Typography> 
           {sendingItemsStatus === SendingStatus.SENT || !hasProducts
             ?   <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
             &nbsp;&nbsp;&nbsp;<CheckIcon  fontSize="medium"  style={{ color:"green",fontWeight:"bold" }}/>
-            <Typography variant="h6" alignSelf="center" fontWeight="bold" fontSize="16px" color="green" component="p">
+            <Typography variant="h6" alignSelf="center" fontWeight="bold" fontSize="16px" color="green" component="p" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}}>
                   Accepted
           </Typography> 
                             </Box>            : sendingMoneyStatus === SendingStatus.SENDING?
  <Box sx={{ display: 'flex' }}>
  &nbsp;&nbsp;&nbsp;
  <HourglassTopIcon  fontSize="medium"  style={{ color:"yellow",fontWeight:"bold" }}/>
- <Typography variant="h6" alignSelf="center" fontWeight="bold" color="yellow" fontSize="16px" component="p">
- On The Way
+ <Typography variant="h6" alignSelf="center" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}} fontWeight="bold" color="yellow" fontSize="16px" component="p">
+ On the way
 </Typography> 
                  </Box> :
             <Box sx={{ display: 'flex' }}>
           &nbsp;&nbsp;&nbsp;
             <ClearIcon fontSize="medium"  style={{ color:"red",fontWeight:"bold" }}/>
-            <Typography variant="h6" alignSelf="center" fontWeight="bold" fontSize="16px" color="red" component="p">
+            <Typography variant="h6" alignSelf="center" sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"normal"}} fontWeight="bold" fontSize="16px" color="red" component="p">
             Not started #6077
           </Typography> 
           </Box>
@@ -117,7 +118,7 @@ const UserConfirmation: React.FC<UserConfirmationProps> = (props) => {
             variant="outlined"
            
             size="small"
-            sx={{borderRadius:"16px", padding:"0px 20px",backgroundColor:"#7590d3", color:"white"}}
+            sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"captalize",borderRadius:"16px", padding:"0px 30px",backgroundColor:"#7590d3", color:"white"}}
           >
 
             Send

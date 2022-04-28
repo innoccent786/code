@@ -1084,29 +1084,15 @@ on double click
                       <Tooltip title="User Name 2">
                       <Box>
         <span style={{color:"#525252",fontWeight:"bold"}}>Value</span>
-                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-       <TextField
-                        variant="standard"
-                          InputProps={{
-                            startAdornment: (
-                              <Icon icon="mdi:ethereum" color="green" style={{width:25, height:25}}/>
-                                     
-                            ),
-                            disableUnderline:true,
-                            style:{fontSize:"16px"}
-                          }}
-                          className={classes.feeInput}
-                          
-                          disabled={true}
-                          // disabled={user.id !== userId}
-                          type="number"
-                          size="small"
-
-                          value={user.id === userId ? "0.05" : "0.06"}
-                        />
+                
+                         <Box sx={{ display: 'flex' }}>
+            &nbsp;&nbsp;&nbsp;    <Icon icon="mdi:ethereum" color="#776ad2" style={{width:25, height:25}}/>
+            <Typography variant="h6" alignSelf="center" fontSize="20px" fontWeight="bold" color="#68C552" component="p">
+            {user.id === userId ? "0.05" : "0.06"}
+          </Typography> 
+                            </Box>
                         </Box>
-                        </Box>
-         
+                
                       </Tooltip>
                     </Grid>
                     {user.id==userId?
@@ -1128,7 +1114,7 @@ on double click
                                   }
                                   InputProps={{
                                     startAdornment: (
-                                      <Icon icon="mdi:ethereum" color="green" style={{width:25, height:25}}/>
+                                      <Icon icon="mdi:ethereum" color="#776ad2" style={{width:25, height:25}}/>
                                      
                                     ),
                                     disableUnderline:true,
@@ -1156,7 +1142,7 @@ on double click
                         user.id===userId? <span style={{color:"#525252",fontWeight:"bold"}}>Send Additional Ethereum</span>
                         :<span style={{color:"#525252",fontWeight:"bold"}}>Additional Ethereum</span>}
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                      <Icon icon="mdi:ethereum" color="green" style={{width:25, height:25}}/>
+                      <Icon icon="mdi:ethereum" color="#776ad2" style={{width:25, height:25}}/>
                                      
 
                         <TextField
@@ -1208,13 +1194,16 @@ on double click
                                   TradeStatus.ACCEPTED ||
                                 dealClosed
                               }
-                              sx={{backgroundColor:"#68C552",borderRadius:"22px",padding:"4px 8px!important"}}
+                              size="large"
+                              sx={{backgroundColor:"#37b918",fontWeight:"bold",color:"white",fontSize:"20px",padding:"1px 12px",borderRadius:"22px",fontFamily:"Verdana,sans-serif",textTransform:"capitalize"}}
+                              startIcon={
+                                <Icon icon="mdi:check-bold" width={24} height={24} />
+                               
+                              }
                               onClick={changeTradeStatus(TradeStatus.ACCEPTED)}
-                              variant="contained"
-                              
+                              variant="contained"                              
                             >
-                             <span>   <CheckIcon  fontSize="medium"  style={{ alignSelf:"center",color:"white",fontWeight:"bold" }} />
-                             </span> <span style={{alignSelf:"center",fontWeight:"bold",color:"white"}}>{user.id===userId?"Accept Trade":" Accepted"}</span>
+                             {user.id===userId?"Accept":" Accepted"}
                             </Button>
 
                           </Grid>
@@ -1230,10 +1219,13 @@ on double click
                               onClick={changeTradeStatus(TradeStatus.NONE)}
                               variant="contained"
                               color="error"
-                              sx={{borderRadius:"22px",backgroundColor:"#B14843",padding:"4px 8px"}}
+                              size="large"
+                              startIcon={
+                                <Icon icon="ep:close-bold" width={24} height={24}/>
+                              }
+                              sx={{borderRadius:"22px",fontSize:"20px",backgroundColor:"#B14843",fontWeight:"bold",color:"white",fontFamily:"Verdana,sans-serif",textTransform:"capitalize",padding:"1px 12px"}}
                             >
-                            <span>   <ClearIcon  fontSize="medium"  style={{ alignSelf:"center",color:"white",fontWeight:"bold" }} />
-                             </span> <span style={{alignSelf:"center",fontWeight:"bold",color:"white"}}>Cancel</span>
+                             Cancel
                             </Button>
                           </Grid>
 :""}

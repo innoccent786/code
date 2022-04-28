@@ -66,8 +66,8 @@ const TraderView: React.FC<TraderViewProps> = (props) => {
         {props.canJoinTrade && (
           <Grid item xs="auto">
             {props.isCurrentUser && (
-              <Button onClick={props.onJoinTrade} sx={{borderRadius:22,fontWeight:1500,color:'white',backgroundColor:'#776ad2'}} variant="contained">
-                Join
+              <Button onClick={props.onJoinTrade} sx={{fontFamily:"Verdana,sans-serif!important",textTransform:"capatalize!important",borderRadius:22,fontWeight:1500,color:'white',backgroundColor:'#776ad2'}} variant="contained">
+               Join 
               </Button>
             )}
           </Grid>
